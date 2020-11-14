@@ -4,12 +4,12 @@
 #include <sys/fcntl.h>
 #include <semaphore.h>
 void logdog(char *file){
-    FILE *f = fopen(file,"a+"); 
+    FILE *f = fopen(file, "a+"); 
     fprintf(f, "Process %d\n", getpid());
     fclouse(f);
     sleep(1);
 }
-void vito(FILE *f){
+void vito(char *file){
     sem_t *sem1;
     sem_t *sem2;
     char *name_sem1 = "/Hello";
@@ -33,7 +33,7 @@ void vito(FILE *f){
     sem_unlink(name_sem2);
 }
 void main(int argc, char* argv[]) {
-    FILE *f = fopen("text.txt", "w");
+    FILE *f = fopen("text.txt", "a+");
     vito(f);
-    fclose(f);
+    fclouse(f);
     }
