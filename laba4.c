@@ -28,7 +28,7 @@ void vito(FILE *f){
     } 
 }
 void main(int argc, char* argv[]) {
-    FILE *f = fopen("text.txt", "a");
+    FILE *f = fopen("text.txt", "w");
     vito(f);
     fclose(f);
     }
