@@ -3,8 +3,11 @@
 #include <string.h>
 #include <sys/fcntl.h>
 #include <semaphore.h>
-void logdog(FILE *f){
+void logdog(char *file){
+    FILE *f = fopen(file,"a+"); 
     fprintf(f, "Process %d\n", getpid());
+    fclouse(f);
+    sleep(1);
 }
 void vito(FILE *f){
     sem_t *sem1;
