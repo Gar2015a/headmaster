@@ -26,6 +26,8 @@ void vito(FILE *f){
             sem_post(sem1);
         }
     } 
+    sem_unlink(name_sem1);
+    sem_unlink(name_sem2);
 }
 void main(int argc, char* argv[]) {
     FILE *f = fopen("text.txt", "w");
