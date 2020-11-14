@@ -3,7 +3,7 @@
 #include <string.h>
 #include <sys/fcntl.h>
 #include <semaphore.h>
-void log(FILE *f){
+void logdog(FILE *f){
     fprintf(f, "Process %d\n", getpid());
 }
 void vito(FILE *f){
@@ -16,13 +16,13 @@ void vito(FILE *f){
     if(fork()) {
         for(int i = 0; i<=3; i++){
             sem_wait(sem1);
-            log(f);
+            logdog(f);
             sem_post(sem2);
         }
     } else {
         for(int i = 0; i<=3; i++){
             sem_wait(sem2);
-            log(f);
+            logdog(f);
             sem_post(sem1);
         }
     } 
