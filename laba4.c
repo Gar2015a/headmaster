@@ -9,8 +9,8 @@ void log(FILE *f){
 void vito(FILE *f){
     sem_t *sem1;
     sem_t *sem2;
-    char *name_sem1 = "/10";
-    char *name_sem2 = "/20";
+    char *name_sem1 = "/Hello";
+    char *name_sem2 = "/Privet";
     sem1 = sem_open(name_sem1,  O_CREAT | O_EXCL, 0777, 1);
     sem2 = sem_open(name_sem2,  O_CREAT | O_EXCL, 0777, 0);
     if(fork()) {
