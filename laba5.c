@@ -17,7 +17,10 @@ int main() {
   }
    if (fork_result == 0) {
    data_processed = read(file_pipes[0], some_data, strlen(some_data));
-   printf("%s", some_data);
+   for(int counter = 0; counter<data_processed; counter++) 
+        {
+            printf("%c", some_data[counter]);
+        }
    exit(EXIT_SUCCESS);
   }
    else {
