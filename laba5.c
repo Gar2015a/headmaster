@@ -27,7 +27,7 @@ int main() {
   for(int i=0; i<strlen(some_data); i++){
       some_data[i]=toupper(some_data[i]);
   }
-   data_processed = write(file_pipes[1], some_data, strlen(some_data));
+   write(file_pipes[1], some_data, strlen(some_data));
   }
  }
  exit(EXIT_SUCCESS);
